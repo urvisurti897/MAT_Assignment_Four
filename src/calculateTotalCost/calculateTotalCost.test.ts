@@ -15,10 +15,16 @@ describe('calculateTotalCost', () => {
     expect(calculateTotalCost(0, 50)).toBe(50);
   });
 
-  test('should handle negative values correctly', () => {
-    expect(calculateTotalCost(-100, 50)).toBe(-50);
-    expect(calculateTotalCost(100, -50)).toBe(50);
-    expect(calculateTotalCost(-100, -50)).toBe(-150);
+  test('should throw error when paint cost is negative', () => {
+    expect(() => calculateTotalCost(-100, 50)).toThrow('Paint cost cannot be negative');
+  });
+
+  test('should throw error when labor cost is negative', () => {
+    expect(() => calculateTotalCost(100, -50)).toThrow('Labor cost cannot be negative');
+  });
+
+  test('should throw error when both costs are negative', () => {
+    expect(() => calculateTotalCost(-100, -50)).toThrow('Paint cost cannot be negative');
   });
 
   test('should return 0 when both costs are 0', () => {
