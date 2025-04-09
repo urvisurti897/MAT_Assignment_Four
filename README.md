@@ -59,3 +59,26 @@ To run a specific test, you can use
 npm run test [my test name]
 ```
 
+To run calculateCanvasDiagonal
+```bash
+npm run test calculateCanvasDiagonal.test.ts
+```
+
+To run calculateCanvasPerimeter
+```bash
+npm run test calculateCanvasPerimeter.test.ts
+```
+
+To run calculateCanvasSize
+```bash
+npm run test calculateCanvasSize.test.ts
+```
+
+To run calculatePaintCost
+```bash
+npm run test calculatePaintCost.test.ts
+```
+To run calculateTotalCost
+```bash
+npm run test calculateTotalCost.test.ts
+```

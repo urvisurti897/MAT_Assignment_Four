@@ -22,12 +22,5 @@ export default function calculateCanvasSize(
     throw new Error("Width should not be zero");
   }
 
-  if (isNaN(lengthNum)) {
-    throw new Error("Length should not be non-numeric");
-  }
-  if (isNaN(widthNum)) {
-    throw new Error("Width should not be non-numeric");
-  }
-
   return (lengthNum) * (widthNum);
 }
