@@ -15,9 +15,15 @@ describe('calculatePaintCost', () => {
     expect(calculatePaintCost(10, 0)).toBe(0);
   });
 
-  test('should handle negative values correctly', () => {
-    expect(calculatePaintCost(-10, 5)).toBe(-50);
-    expect(calculatePaintCost(10, -5)).toBe(-50);
-    expect(calculatePaintCost(-10, -5)).toBe(50);
+  test('should throw error when paint required is negative', () => {
+    expect(() => calculatePaintCost(-10, 5)).toThrow('Paint required cannot be negative');
+  });
+
+  test('should throw error when cost per liter is negative', () => {
+    expect(() => calculatePaintCost(10, -5)).toThrow('Cost per liter cannot be negative');
+  });
+
+  test('should throw error when both values are negative', () => {
+    expect(() => calculatePaintCost(-10, -5)).toThrow('Paint required cannot be negative');
   });
 });
